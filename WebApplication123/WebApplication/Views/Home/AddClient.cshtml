@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "AddClient";
+}
+<div ng-controller="ClientController as ClientCntrl">
+    <h2>"Title"</h2>
+        <div class="panel-body">
+            <table class="table">
+                <tr style="display:none">
+                    <td><b>Id</b></td>
+                    <td>
+                        <input type="text" class="form-control" disabled="disabled" ng-model="ClientCntrl.clientId" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>"surname"</b></td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="ClientCntrl.clientsurname" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>"name"</b></td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="ClientCntrl.clientname" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>"patronymic"</b></td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="ClientCntrl.clientpatronymic" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>"phone"</b></td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="ClientCntrl.clientphone" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>"table_number"</b></td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="ClientCntrl.clienttable_number" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>"time"</b></td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="ClientCntrl.clienttime" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>"hours"</b></td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="ClientCntrl.clienthours" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" class="btn btn-success" value="Сохранить" ng-click="ClientCntrl.AddClient()" style="margin-right:10px" />
+                        @*<input type="button" class="btn btn-danger" value="Отмена" ng-click="ClientCntrl.CancelAddShipDiv()" />*@
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+

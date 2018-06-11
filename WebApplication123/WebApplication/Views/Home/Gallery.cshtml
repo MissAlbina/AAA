@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Gallery";
+}
+
+<div ng-controller="SlidesController as SlidesCntrl">
+    <div class="jumbotron2">
+        <!-- slider container -->
+        <div class="container slider">
+            <!-- enumerate all photos -->
+            <img ng-repeat="photo in SlidesCntrl.photos" class="slide img3" ng-swipe-right="SlidesCntrl.showPrev()" ng-swipe-left="SlidesCntrl.showNext()" ng-show="SlidesCntrl.isActive($index)" ng-src="{{photo.src}}" />
+            <!-- prev / next controls -->
+            <a class="arrow prev" href="#" ng-click="SlidesCntrl.showPrev()"></a>
+            <a class="arrow next" href="#" ng-click="SlidesCntrl.showNext()"></a>
+            <!-- extra navigation controls -->
+            <ul class="nav2">
+                <li ng-repeat="photo in SlidesCntrl.photos" ng-class="{'active':SlidesCntrl.isActive($index)}">
+                    <img class="img2" src="{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" ng-click="SlidesCntrl.showPhoto($index);" />
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Меню";
+}
+
+
+<h2>RestaurantMenu</h2>
+
+<div class="row" ng-controller="RestaurantMenuController as RestaurantMenuCntrl">
+    <div class="col-sm-3">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h4>Категории продуктов</h4>
+                <ul class="nav nav-pills nav-stacked nav-pills-success" role="tablist">
+                    <!--
+                        color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
+                    -->
+                    <li id="0" ng-class="active">
+                        <a role="tab" data-toggle="tab">
+                            Асcортимент
+                        </a>
+                    </li>
+                    <li ng-click="RestaurantMenuCntrl.enterSearch2(1)">
+                        <a role="tab" data-toggle="tab">
+                            Горячее
+                        </a>
+                    </li>
+                    <li ng-click="RestaurantMenuCntrl.enterSearch2(2)">
+                        <a role="tab" data-toggle="tab">
+                            Закуски
+                        </a>
+                    </li>
+                    <li ng-click="RestaurantMenuCntrl.enterSearch2(3)">
+                        <a role="tab" data-toggle="tab">
+                            Напитки
+                        </a>
+                    </li>                  
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <div class="row">
+            <div class="col-md-6" ng-repeat="restaurantMenu in RestaurantMenuCntrl.allMenuItems" ng-show="{{restaurantMenu._availability}}" style="height:47em">
+                <div class="panel panel-default" style="height:inherit">
+                    <div class="panel-body">
+                        <a><h3 class="heading">{{restaurantMenu._name}}</h3></a>
+                        <h5>
+                            <span class="label label-success" ng-show="restaurantMenu._novelty">Новинка</span>
+                            <span class="label label-danger"  ng-show="restaurantMenu._hit">Хит</span>
+                        </h5>
+                        <img src="{{restaurantMenu._picture}}" alt="Raised Image" class="img-rounded img-responsive img-raised">
+                        <h5>{{restaurantMenu._category}}</h5>
+                        <p style="margin-top:5%">{{restaurantMenu._information}}</p>
+                        <div class="alert alert-info">
+                            <div class="container-fluid">
+                                <b>{{restaurantMenu._price}}</b>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                   
+        </div>
+    </div>
+</div>

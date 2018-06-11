@@ -1,0 +1,28 @@
+CREATE TABLE [dbo].[BookingTables] (
+    [Id]            INT            IDENTITY (1, 1) NOT NULL,
+    [surname]       NVARCHAR (50)  NOT NULL,
+    [name]          NVARCHAR (50)  NOT NULL,
+    [patronymic]    NVARCHAR (50)  NULL,
+    [phone]         NVARCHAR (50)  NOT NULL,
+    [table_number]  NVARCHAR (50)  NULL,
+    [time]          NVARCHAR (50)  NULL,
+    [hours]         NVARCHAR (50)  NULL,
+    [date_time_reg] NVARCHAR (50)  DEFAULT (getdate()) NOT NULL,
+    [comment_text]  NVARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
+CREATE TABLE [dbo].[RestaurantMenu] (
+    [Id]           INT            IDENTITY (1, 1) NOT NULL,
+    [category]     INT            NOT NULL,
+    [name]         NVARCHAR (50)  NOT NULL,
+    [novelty]      BIT            NULL,
+    [hit]          BIT            NULL,
+    [picture]      NVARCHAR (MAX) NULL,
+    [information]  NVARCHAR (MAX) NULL,
+    [price]        NVARCHAR (50)  NULL,
+    [availability] BIT            NOT NULL
+);
+
